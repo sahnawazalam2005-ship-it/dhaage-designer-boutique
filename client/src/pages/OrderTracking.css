@@ -1,0 +1,217 @@
+.track-page {
+  max-width: 860px;
+}
+
+.track-form {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  max-width: 560px;
+}
+
+.track-form .form-control {
+  flex: 1;
+  padding: 12px 16px;
+  letter-spacing: 0.5px;
+}
+
+.order-success-banner {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(46, 139, 87, 0.06);
+  border: 1px solid rgba(46, 139, 87, 0.35);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+.order-success-icon {
+  font-size: 1.8rem;
+}
+
+.order-success-banner h3 {
+  color: var(--success);
+  margin-bottom: 4px;
+}
+
+.order-success-banner p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.track-result {
+  margin-top: 28px;
+  padding: 28px;
+}
+
+.track-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 18px;
+}
+
+.track-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.track-status-label {
+  margin: 18px 0;
+  font-size: 1rem;
+}
+
+.track-status-label strong {
+  color: var(--text);
+}
+
+.track-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 0 30px;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.timeline-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: #fff;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  z-index: 2;
+  transition: all 0.4s;
+}
+
+.timeline-step.done .timeline-dot {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.timeline-step.active .timeline-dot {
+  border-color: var(--text);
+  color: var(--text);
+  box-shadow: 0 0 0 6px rgba(28, 28, 26, 0.1);
+}
+
+.timeline-label {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.timeline-step.done .timeline-label,
+.timeline-step.active .timeline-label {
+  color: var(--text);
+}
+
+.timeline-line {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.timeline-step.done .timeline-line {
+  background: var(--text);
+}
+
+.track-activity {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.track-activity h4,
+.track-items h4 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.activity-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.activity-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+  background: var(--border);
+}
+
+.dot-pending { background: var(--warning); }
+.dot-confirmed { background: var(--info); }
+.dot-processing { background: var(--info); }
+.dot-preparing { background: var(--info); }
+.dot-ready_to_ship { background: var(--info); }
+.dot-shipped { background: var(--text); }
+.dot-out_for_delivery { background: var(--text); }
+.dot-delivered { background: var(--success); }
+.dot-cancelled { background: var(--danger); }
+
+.track-items {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+  margin-top: 18px;
+}
+
+.track-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.track-hint {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.track-hint .icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 560px) {
+  .track-form {
+    flex-direction: column;
+  }
+  .timeline-label {
+    font-size: 0.65rem;
+  }
+}
+

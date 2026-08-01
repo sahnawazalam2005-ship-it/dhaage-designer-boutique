@@ -1,0 +1,31 @@
+{
+  "name": "dhaage-designer-boutique",
+  "version": "1.0.0",
+  "description": "Dhaage Designer Mens Boutique - Full-stack e-commerce website with WhatsApp ordering",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix client run build",
+    "start": "NODE_ENV=production node server/index.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "menswear",
+    "boutique",
+    "sherwani",
+    "suits",
+    "whatsapp-ordering"
+  ],
+  "author": "Dhaage Designer Mens Boutique",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+

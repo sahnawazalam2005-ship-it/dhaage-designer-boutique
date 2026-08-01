@@ -1,0 +1,125 @@
+.shop-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.shop-sort {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.shop-sort label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.shop-sort .form-control {
+  width: 210px;
+  padding: 10px 14px;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+}
+
+.filter-title {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.filter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 10px 6px;
+  text-align: left;
+  font-size: 0.93rem;
+  border-left: 2px solid transparent;
+  transition: all 0.25s;
+}
+
+.filter-item:hover {
+  color: var(--text);
+  padding-left: 10px;
+}
+
+.filter-item.active {
+  color: var(--text);
+  border-left-color: var(--text);
+  padding-left: 10px;
+  font-weight: 500;
+}
+
+.filter-count {
+  background: var(--bg-soft);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.shop-products {
+  min-height: 400px;
+}
+
+@media (max-width: 900px) {
+  .shop-layout {
+    grid-template-columns: 1fr;
+  }
+  .filters {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .filters .card {
+    flex: 1;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 520px) {
+  .shop-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .shop-sort {
+    width: 100%;
+  }
+  .shop-sort .form-control {
+    flex: 1;
+  }
+}
+

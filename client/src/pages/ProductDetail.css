@@ -1,0 +1,481 @@
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  margin-bottom: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--text);
+}
+
+.pd-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+}
+
+.pd-gallery {
+  position: sticky;
+  top: calc(var(--header-h) + 20px);
+  align-self: start;
+}
+
+/* ---------- Main image + snap track ---------- */
+.pd-main-img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  aspect-ratio: 4/5;
+  cursor: zoom-in;
+}
+
+.pd-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pd-track::-webkit-scrollbar {
+  display: none;
+}
+
+.pd-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+.pd-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Discount badge ---------- */
+.pd-discount {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+}
+
+/* ---------- Prev / Next arrows ---------- */
+.pd-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: var(--shadow-sm);
+}
+
+.pd-nav:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.pd-nav-prev {
+  left: 14px;
+}
+
+.pd-nav-next {
+  right: 14px;
+}
+
+/* ---------- Position dots ---------- */
+.pd-dots {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 12px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+}
+
+.pd-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--text-muted);
+  background: transparent;
+  padding: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.pd-dot.active {
+  background: var(--text);
+  border-color: var(--text);
+  transform: scale(1.25);
+}
+
+/* ---------- Zoom hint ---------- */
+.pd-zoom-hint {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------- Thumbnails ---------- */
+.pd-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.pd-thumb {
+  width: 84px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  background: var(--bg-soft);
+  padding: 0;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  flex-shrink: 0;
+}
+
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-thumb:hover,
+.pd-thumb.active {
+  border-color: var(--text);
+}
+
+/* ---------- Info ---------- */
+.pd-category {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.pd-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  margin: 10px 0 16px;
+}
+
+.pd-price-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.pd-price {
+  font-size: 1.8rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.pd-price-old {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  color: var(--text-dim);
+}
+
+.pd-availability {
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+}
+
+.pd-desc {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.pd-select-group {
+  margin-bottom: 22px;
+}
+
+.pd-select-label {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.pd-size-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pd-size {
+  min-width: 52px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: all 0.25s;
+}
+
+.pd-size:hover {
+  border-color: var(--text);
+}
+
+.pd-size.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+  font-weight: 500;
+}
+
+.pd-color-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pd-color {
+  padding: 10px 16px;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  border-radius: 30px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  transition: all 0.25s;
+}
+
+.pd-color:hover {
+  border-color: var(--text);
+}
+
+.pd-color.active {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
+.pd-qty-row {
+  margin-bottom: 24px;
+}
+
+.pd-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.pd-qty button {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-qty button:hover {
+  color: var(--gold);
+}
+
+.pd-qty span {
+  min-width: 28px;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.pd-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pd-actions .btn {
+  flex: 1;
+  padding: 14px 20px;
+}
+
+.pd-perks {
+  margin-top: 28px;
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-soft);
+}
+
+.pd-perk {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Related ---------- */
+.related-section {
+  margin-top: 72px;
+}
+
+/* ---------- Lightbox ---------- */
+.pd-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 20, 18, 0.94);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+  padding: 24px;
+}
+
+.pd-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 3001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s;
+}
+
+.pd-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pd-lightbox-inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-lightbox-img {
+  max-width: 90vw;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.pd-lightbox .pd-nav {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.pd-lightbox .pd-nav:hover {
+  background: #fff;
+  color: #111;
+}
+
+.pd-dots-lightbox {
+  bottom: -52px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.pd-dots-lightbox .pd-dot {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.pd-dots-lightbox .pd-dot.active {
+  background: #fff;
+  border-color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .pd-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .pd-gallery {
+    position: static;
+  }
+  .pd-thumbs {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .pd-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+  }
+  .pd-zoom-hint {
+    display: none;
+  }
+}
+
